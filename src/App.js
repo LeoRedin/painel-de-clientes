@@ -10,6 +10,7 @@ import Login from "./components/auth/Login";
 import { Provider } from "react-redux";
 import store from "./store";
 import { UserIsAuthenticated, UserIsNotAuthenticated } from "./helpers/auth";
+import Settings from "./components/settings/Settings";
 
 class App extends Component {
     render() {
@@ -46,6 +47,11 @@ class App extends Component {
                                     exact
                                     path="/login"
                                     component={UserIsNotAuthenticated(Login)}
+                                />
+                                <Route
+                                    exact
+                                    path="/settings"
+                                    component={UserIsAuthenticated(Settings)}
                                 />
                             </Switch>
                         </div>
